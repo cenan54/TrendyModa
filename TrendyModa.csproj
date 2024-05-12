@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\Pages\sign-in-up\css\font-awesome.min.css" />
+    <Content Remove="wwwroot\Pages\sign-in-up\css\style.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Pages\sign-in-up\css\font-awesome.min.css" />
+    <None Include="wwwroot\Pages\sign-in-up\css\style.css" />
+    <None Include="wwwroot\Pages\sign-in-up\fonts\fontawesome-webfont.eot" />
+    <None Include="wwwroot\Pages\sign-in-up\fonts\fontawesome-webfont.ttf" />
+    <None Include="wwwroot\Pages\sign-in-up\fonts\fontawesome-webfont.woff" />
+    <None Include="wwwroot\Pages\sign-in-up\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\Pages\sign-in-up\fonts\FontAwesome.otf" />
+    <None Include="wwwroot\Pages\sign-in-up\fonts\fontello.eot" />
+    <None Include="wwwroot\Pages\sign-in-up\fonts\fontello.svg" />
+    <None Include="wwwroot\Pages\sign-in-up\fonts\fontello.ttf" />
+    <None Include="wwwroot\Pages\sign-in-up\fonts\fontello.woff" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="bootstrap" Version="5.3.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="8.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\" />
+  </ItemGroup>
+
+</Project>

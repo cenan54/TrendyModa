@@ -1,0 +1,122 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+
+@{
+	Layout = null;
+	ViewData["Title"] = "Hoş Geldiniz";
+}
+
+@model TrendyModa.Models.User
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<!-- Meta tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<script>
+		addEventListener("load", function () { setTimeout(hideURLbar, 0); }, false); function hideURLbar() { window.scrollTo(0, 1); }
+	</script>
+	<!-- Meta tags -->
+	<!-- font-awesome icons -->
+	<link rel="stylesheet" href="/Pages/sign-in-up/css/font-awesome.min.css" />
+	<!-- //font-awesome icons -->
+	<!--stylesheets-->
+	<link href="/Pages/sign-in-up/css/style.css" rel='stylesheet' type='text/css' media="all">
+	<!--//style sheet end here-->
+
+	<link href="//fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
+
+	<style>
+		.color-attr {
+			width: 100%;
+			background: #691dc4;
+			outline: none;
+			color: #fff;
+			font-size: 13px;
+			border: 1px solid #fff;
+			padding: 9px 6px;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			cursor: pointer;
+			transition: 0.5s all;
+			-webkit-transition: 0.5s all;
+			-o-transition: 0.5s all;
+			-moz-transition: 0.5s all;
+			-ms-transition: 0.5s all;
+		}
+
+		a:visited {
+			color: white;
+		}
+	</style>
+
+</head>
+
+<body>
+	<h1 class="header-w3ls">
+		TrendyModa'ya Hoşgeldiniz!
+	</h1>
+	<div class="mid-cls">
+		<div class="swm-left-w3ls">
+			<form action="#" method="post">
+				<div class="main">
+					<div class="icon-head-wthree">
+						<h2><span class="fa fa-diamond t-w3" aria-hidden="true"></span></h2>
+						<h4>Kayıt Ol</h4>
+					</div>
+					<div class="form-left-to-w3l">
+
+						<input type="text" asp-for="Name" placeholder="İsim" required>
+						<div class="clear"></div>
+					</div>
+					<div class="form-left-to-w3l">
+
+						<input type="text" asp-for="Lastname" placeholder="Soyisim" required>
+						<div class="clear"></div>
+					</div>
+
+					<div class="form-left-to-w3l">
+
+						<input type="text" asp-for="Username" placeholder="Kullanıcı Adı" required>
+						<div class="clear"></div>
+					</div>
+
+					<div class="form-left-w3l">
+
+						<input type="email" asp-for="Email" placeholder="Email" required>
+					</div>
+					<div class="form-right-w3ls ">
+
+						<input type="password" asp-for="Password" placeholder="Şifre" required>
+
+						<div class="clear"></div>
+					</div>
+					<div class="btnn">
+						<button type="submit">Kayıt Ol</button><br>
+						<div class="clear"></div>
+						<p class="for">Ya da...</p>
+					</div>
+				</div>
+
+			</form>
+			
+			<button class="btn color-attr"><a asp-controller="Account" asp-action="Login">Giriş Yap</a></button><br>
+
+		</div>
+
+	
+	</div>
+	<div class="copy">
+		<p>2024 - TrendyModa - Mustafa Cenan</p>
+	</div>
+</body>
+</html>
