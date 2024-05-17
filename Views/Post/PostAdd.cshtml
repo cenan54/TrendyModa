@@ -12,17 +12,7 @@
     <div class="col-md-4">
         <form asp-action="PostAddAction" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="UserId" class="control-label">Kullanıcı Id:</label>
-                <input asp-for="UserId" type="text" class="form-control" disabled name="name" value="@User.FindFirst(x => x.Type == "UserId").Value" />
-                <span asp-validation-for="UserId" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="CreatedAt" class="control-label"></label>
-                <input asp-for="CreatedAt" class="form-control"/>
-                <span asp-validation-for="CreatedAt" class="text-danger"></span>
-            </div>
+           
             <div class="form-group">
                 <label asp-for="Description" class="control-label"></label>
                 <input asp-for="Description" class="form-control" />
@@ -30,7 +20,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Image" class="control-label"></label>
-                <input type="file" id="files" asp-for="Image" name="imageFile"/>
+                <input type="file" id="files" asp-for="Image" name="Image"/>
                 <span asp-validation-for="Image" class="text-danger"></span>
             </div>
             <div class="form-group mt-3">

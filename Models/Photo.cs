@@ -20,4 +20,6 @@ public partial class Photo
     public virtual ICollection<Like> Likes { get; set; } = new List<Like>();
 
     public virtual User User { get; set; } = null!;
+
+    public string FotoBase64 => Convert.ToBase64String(Image);
 }
