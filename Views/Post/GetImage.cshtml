@@ -1,6 +1,21 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+
 @{
 }
-<img src="@Url.Action("GetImage", new { id = Model.Id })" alt="Fotoğraf" />
+
+
+@model IEnumerable<Photo>
+
+@foreach (var item in Model)
+{
+    string imageBase64 = Convert.ToBase64String(item.Image);
+    string imageSrc = String.Format("data:image;base64,{0}", imageBase64);
+    <img src="@imageSrc" />
+}
+
+
+
+    @* <img src="@Url.Action("GetImage", new { id = Model.Id })" alt="Fotoğraf" /> *@
+

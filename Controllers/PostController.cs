@@ -53,16 +53,36 @@ namespace TrendyModa.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetImage(int id)
+        public IActionResult GetImage()
         {
-            var photoModel = context.Photos.Find(id);
-            if (photoModel != null)
-            {
-                return File(photoModel.Image, "image/jpeg");
-            }
-            return NotFound();
+            var images = context.Photos.ToList();
+            return View(images);
         }
 
+        //[HttpGet]
+        //public IActionResult GetImage(int id)
+        //{
+        //    var photoModel = context.Photos.Find(id);
+        //    if (photoModel != null)
+        //    {
+        //        return File(photoModel.Image, "image/jpeg");
+        //    }
+        //    return NotFound();
+        //}
+
+        //[HttpGet]
+        //public IActionResult GetImage()
+        //{
+        //    List<Photo> photos = context.Photos.ToList();
+        //    var imageModels = photos.Select(p => new
+        //    {
+        //        p.Description,
+        //        ImageData = $"data:image/jpeg;base64,{Convert.ToBase64String(p.Image)}"
+        //    }).ToList();
+
+
+        //    return View(imageModels);
+        //}
 
 
     }
