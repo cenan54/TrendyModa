@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TrendyModa")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e1e39fdaa1e4227b6b78ac03d1a57edf1c7f19b1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e7c9b01936494c840c03567b5cbaf3c2af05b8e")]
 [assembly: System.Reflection.AssemblyProductAttribute("TrendyModa")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TrendyModa")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

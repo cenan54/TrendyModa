@@ -57,6 +57,7 @@ namespace TrendyModa.Controllers
         {
             var images = context.Photos.ToList();
             
+            
                 return View(images);
         }
 
