@@ -1,7 +1,7 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-
+@using System.Security.Claims
 @{
 }
 
@@ -19,28 +19,38 @@
 
                 @foreach (var item in Model)
                 {
-                    string imageBase64 = Convert.ToBase64String(item.Image);
-                    string imageSrc = String.Format("data:image;base64,{0}", imageBase64);
+                    if (Model==null)
+                    {
+                        <div class="col-md-4">Henüz bir paylaşım yapmadınız.<a asp-controller="Post" asp-action="PostAdd">Buraya tıklayarak post ekleyebilirsini.</a></div>
+                    }
+                    else
+                    {
+                        if (User.FindFirst(x => x.Type == "Username").Value == item.UserId.ToString())
+                        {
+                            string imageBase64 = Convert.ToBase64String(item.Image);
+                            string imageSrc = String.Format("data:image;base64,{0}", imageBase64);
 
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src="@imageSrc" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text">@item.UserId</p>
-                                <p class="card-text">@item.Description</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Like</button>
+                            <div class="col-md-4">
+                                <div class="card mb-4 box-shadow">
+                                    <img class="card-img-top" src="@imageSrc" alt="Card image cap">
+                                    <div class="card-body">
+                                        <p class="card-text">@item.UserId</p>
+                                        <p class="card-text">@item.Description</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-sm btn-outline-secondary">Like</button>
 
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                            </div>
+                                            <small class="text-muted"></small>
+                                        </div>
                                     </div>
-                                    <small class="text-muted"></small>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        }
+                    }
                 }
-
+              
 
             </div>
         </div>
@@ -59,4 +69,6 @@
 
 
     @* <img src="@Url.Action("GetImage", new { id = Model.Id })" alt="Fotoğraf" /> *@
+
+
 

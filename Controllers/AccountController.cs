@@ -72,15 +72,12 @@ namespace TrendyModa.Controllers
 		}
 
         // Logout islemi
-        public async Task<IActionResult> Logout()
+        public async Task<IActionResult> LogoutIndex()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("Logout", "Account");
-        }
-
-        public IActionResult LogoutIndex()
-        {
             return View();
         }
+
+      
     }
 }
