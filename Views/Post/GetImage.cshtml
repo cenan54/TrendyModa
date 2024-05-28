@@ -3,34 +3,44 @@
 *@
 @using System.Security.Claims
 @{
+    //kullanıcının sahip olduğu post sayısını tutan değişken
+    int userPostCount = 0;
+    ViewData["Title"] = "Gönderilerim";
 }
-
 
 @model IEnumerable<Photo>
 
-
-
 <main role="main">
-
-    <div class="album py-5 bg-light">
+    <div class="album p-5 bg-light">
         <div class="container">
+            <div class="row px-5">
 
-            <div class="row">
-
+                @* kullanıcının kaç tane post attğını döngü ile bulma işlemi*@
                 @foreach (var item in Model)
                 {
-                    if (Model==null)
+                    if (User.FindFirst(x => x.Type == "UserId").Value == item.UserId.ToString())
                     {
-                        <div class="col-md-4">Henüz bir paylaşım yapmadınız.<a asp-controller="Post" asp-action="PostAdd">Buraya tıklayarak post ekleyebilirsini.</a></div>
+                        userPostCount++;
                     }
-                    else
+                }
+
+                @* kullanıcı daha önce post atmış mı diye kontrol etme işlemi*@
+                @if (userPostCount==0)
+                {
+                    <div>Henüz gönderi atmadınız. <a class="btn btn-success" asp-controller="Post" asp-action="PostAdd">Gönderi Ekle</a></div>
+                }
+                else
+                {
+                    @foreach (var item in Model)
                     {
-                        if (User.FindFirst(x => x.Type == "Username").Value == item.UserId.ToString())
+                        @* burada login yapan kişinin id si ile database user id kontrol 
+                        ekiliyor ki başkasının postu gözükmesin*@
+                        if (User.FindFirst(x => x.Type == "UserId").Value == item.UserId.ToString())
                         {
                             string imageBase64 = Convert.ToBase64String(item.Image);
                             string imageSrc = String.Format("data:image;base64,{0}", imageBase64);
 
-                            <div class="col-md-4">
+                            <div class="col-12">
                                 <div class="card mb-4 box-shadow">
                                     <img class="card-img-top" src="@imageSrc" alt="Card image cap">
                                     <div class="card-body">
@@ -39,7 +49,6 @@
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-sm btn-outline-secondary">Like</button>
-
                                                 <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                                             </div>
                                             <small class="text-muted"></small>
@@ -50,25 +59,7 @@
                         }
                     }
                 }
-              
-
             </div>
         </div>
     </div>
-
 </main>
-
-
-@* @foreach (var item in Model)
-{
-    string imageBase64 = Convert.ToBase64String(item.Image);
-    string imageSrc = String.Format("data:image;base64,{0}", imageBase64);
-    <img src="@imageSrc" />
-}
- *@
-
-
-    @* <img src="@Url.Action("GetImage", new { id = Model.Id })" alt="Fotoğraf" /> *@
-
-
-

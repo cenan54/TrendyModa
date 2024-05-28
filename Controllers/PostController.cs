@@ -56,7 +56,8 @@ namespace TrendyModa.Controllers
         public IActionResult GetImage()
         {
             var images = context.Photos.ToList();
-            return View(images);
+            
+                return View(images);
         }
 
      
