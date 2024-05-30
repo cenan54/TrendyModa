@@ -1,0 +1,54 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model Photo
+
+
+
+@{
+    string imageBase64 = Convert.ToBase64String(Model.Image);
+    string imageSrc = String.Format("data:image;base64,{0}", imageBase64);
+
+
+<main role="main">
+    <div class="album p-5 bg-light">
+        <div class="container">
+            <div class="row px-5">
+<div class="row">
+    <div class="col-sm-0 col-lg-2 col-xxl-3"></div>
+    <div class="col-sm-12 col-lg-8 col-xxl-6">
+        <div class="col-sm-12">
+            <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="@imageSrc" alt="Card image cap">
+                <div class="card-body">
+                    
+                    <p class="card-text">@Model.Description</p>
+                    <hr/>
+                    <p class="card-text text-danger">Bu gönderiyi gerçekten silmek istiyor musunuz?</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+
+                            <form asp-action="Delete" asp-controller="Post" method="post">
+                                <input type="hidden" asp-for="PhotoId" />
+                                <button type="submit" class="btn btn-sm btn-danger" >Evet, gönderim silinsin.</button>
+                            </form>
+                            
+                            <a asp-controller="Post" asp-action="GetImage" type="button" class="btn btn-sm btn-outline-secondary">Hayır, vazgeçtim.</a>
+                         
+                        </div>
+                        <small class="text-muted"></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-0 col-lg-2 col-xxl-3"></div>
+</div>
+                </div>
+            </div>
+        </div>
+        </main>
+}
+
+

@@ -55,13 +55,35 @@ namespace TrendyModa.Controllers
         [HttpGet]
         public IActionResult GetImage()
         {
-            var images = context.Photos.ToList();
+            var images = context.Photos.Include(p => p.User).ToList();
             
             
                 return View(images);
         }
 
-     
+        [HttpGet]
+        public IActionResult Delete(int Id)
+        {
+            var p = context.Photos.FirstOrDefault(x => x.PhotoId == Id);
+            return View(p);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            var p = context.Photos.FirstOrDefault(x => x.PhotoId == id);
+            context.Photos.Remove(p);
+            var count = context.SaveChanges();
+            if (count > 0)
+            {
+                return RedirectToAction("GetImage","Post");
+            }
+            else
+            {
+                return View("PostDelete", p);
+            }
+        }
 
     }
 
