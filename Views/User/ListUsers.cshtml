@@ -2,7 +2,8 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @using System.Security.Claims
-@model IEnumerable<User>
+@using TrendyModa.ViewModels
+@model UserFollowListVM
 @{
     ViewData["Title"] = "Kullanıcılar";
 }
@@ -15,7 +16,7 @@
 
     <div class="my-3 p-3 bg-white rounded box-shadow">
         <h3 class="border-bottom border-gray pb-2 mb-0">Kullanıcılar</h3>
-        @foreach (var item in Model)
+        @foreach (var item in Model.Users)
         {
             if (User.FindFirst(x => x.Type == "UserId").Value == item.UserId.ToString())
             {
@@ -28,7 +29,8 @@
                         <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
                             <div class="d-flex justify-content-between align-items-center w-100">
                                 <strong class="text-gray-dark h5">@item.Username </strong>
-                                <a href="#">Follow</a>
+                                <strong class="text-gray-dark">Takipçi Sayısı:</strong>
+                                <a class="btn btn-outline-primary">Follow</a>
                             </div>
                             <span class="d-block">@item.Name @item.Lastname</span>
                         </div>

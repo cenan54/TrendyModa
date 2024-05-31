@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using TrendyModa.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TrendyModa.Controllers
 {
@@ -42,7 +43,7 @@ namespace TrendyModa.Controllers
             return View();
         }
 
-        //Login islemi
+        
         [HttpPost]
         public async Task<IActionResult> Login([FromForm, Bind("Email", "Password")] User dataUser)
         {
@@ -71,7 +72,7 @@ namespace TrendyModa.Controllers
 			return RedirectToAction("Index", "Home");
 		}
 
-        // Logout islemi
+        [Authorize]
         public async Task<IActionResult> LogoutIndex()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
