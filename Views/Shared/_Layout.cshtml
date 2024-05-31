@@ -35,7 +35,7 @@
                             <a class="nav-link text-light" href="@Url.Action("GetImage", "Post")">Gönderilerim</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="@Url.Action("ListUsers", "User")">Kullanıcılar</a>
+                            <a class="nav-link text-light" href="@Url.Action("UsersList", "User")">Kullanıcılar</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" href="@Url.Action("LogoutIndex", "Account")">Çıkış Yap</a>
@@ -57,7 +57,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - TrendyModa - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2024 - TrendyModa - <a class="text-dark btn-outline-primary" asp-area="" asp-controller="Home" asp-action="Privacy">Hüküm ve Koşullar</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

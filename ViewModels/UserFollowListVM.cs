@@ -6,5 +6,6 @@ namespace TrendyModa.ViewModels
     {
         public List<User> Users { get; set; }
         public List<Follow> Follows { get; set; }
+        
     }
 }

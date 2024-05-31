@@ -13,7 +13,7 @@ namespace TrendyModa.Controllers
         {
             context = new TrendyModaDbContext();
         }
-        public IActionResult ListUsers()
+        public IActionResult UsersList()
         {
             UserFollowListVM vm = new UserFollowListVM();
             vm.Users = context.Users.ToList();
