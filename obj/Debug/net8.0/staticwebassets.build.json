@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "G9OYKmG2xTzpTsJklcNRWv6AsVVegKK1diy7apGwWNA=",
+  "Hash": "2q6kLE+1JdK77TAxm0LUvDVrKPapEBpq//kMZBSIbZo=",
   "Source": "TrendyModa",
   "BasePath": "_content/TrendyModa",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\MyProjects\\sistem-analiz-proje\\TrendyModa\\wwwroot\\icons\\profile.png",
+      "SourceId": "TrendyModa",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\MyProjects\\sistem-analiz-proje\\TrendyModa\\wwwroot\\",
+      "BasePath": "_content/TrendyModa",
+      "RelativePath": "icons/profile.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\icons\\profile.png"
     },
     {
       "Identity": "C:\\MyProjects\\sistem-analiz-proje\\TrendyModa\\wwwroot\\js\\site.js",

@@ -53,6 +53,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\MyProjects\\sistem-analiz-proje\\TrendyModa\\wwwroot\\icons\\profile.png",
+      "PackagePath": "staticwebassets\\icons\\profile.png"
+    },
+    {
       "Id": "C:\\MyProjects\\sistem-analiz-proje\\TrendyModa\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
