@@ -31,7 +31,7 @@
                                 <strong class="text-gray-dark h5">@item.Username </strong>
                                 <strong class="text-gray-dark">Takipçi Sayısı:</strong>
                                 <form asp-controller="Follow" asp-action="FollowAdd" method="post">
-                                    <input type="hidden" value="@item.UserId"/>
+                                    <input type="hidden" asp-for="@item.UserId"/>
                                     <button type="submit" class="btn btn-outline-primary">Follow</button>
                                 </form>
                                 

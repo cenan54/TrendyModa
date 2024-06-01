@@ -40,6 +40,15 @@
                         {
                             string imageBase64 = Convert.ToBase64String(item.Image);
                             string imageSrc = String.Format("data:image;base64,{0}", imageBase64);
+                            int likeCount = 0;
+                            foreach (var like in item.Likes)
+                            {
+                                if (like.PhotoId == item.PhotoId)
+                                {
+                                    likeCount++;
+                                }
+                            }
+
 
                             <div class="row">
                                 <div class="col-sm-0 col-lg-2 col-xxl-3"></div>
@@ -53,7 +62,11 @@
                                                 <p class="card-text">@item.Description</p>
                                                 <div class="d-flex justify-content-between align-items-center">
                                                     <div class="btn-group">
-                                                        <a type="button" class="btn btn-sm btn-outline-secondary">Beğen</a>
+                                                        <form asp-controller="Like" asp-action="LikeAdd" method="post">
+                                                            <input type="hidden" value="@item.PhotoId" />
+                                                            <button type="submit" class="btn btn-sm btn-success">Beğen</button>
+                                                        </form>
+                                                        <a type="button" class="btn btn-sm btn-outline-success" asp-controller="Like" asp-action="LikeList" asp-route-id="@item.PhotoId">@likeCount Beğeni</a>
                                                         <a type="button" class="btn btn-sm btn-outline-secondary">Düzenle</a>
                                                         <a type="button" class="btn btn-sm btn-outline-danger" asp-controller="Post" asp-action="Delete" asp-route-id="@item.PhotoId">Sil</a>
                                                     </div>

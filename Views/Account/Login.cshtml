@@ -67,22 +67,25 @@
 						<h2><span class="fa fa-diamond t-w3" aria-hidden="true"></span></h2>
 						<h4>Giriş</h4>
 					</div>
+					<div asp-validation-summary="All">
+
+					</div>
 					<div class="form-left-w3l">
 
 						<input type="email" asp-for="Email" placeholder="Email" required="">
-
+						<span asp-validation-for="Email" class="text-danger"></span>
 						<div class="clear"></div>
 					</div>
 					<div class="form-right-w3ls ">
 
 						<input type="password" asp-for="Password" placeholder="Şifre" required="">
-
+						<span asp-validation-for="Password" class="text-danger"></span>
 						<div class="clear"></div>
 					</div>
 					<div class="btnn">
 
 						<button type="submit">Giriş Yap</button><br>
-						<a href="#" class="for">Şifreyi mi unuttun...?</a>
+						
 						<p class="for">Ya da...</p>
 					</div>
 				</div>
