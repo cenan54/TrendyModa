@@ -27,7 +27,7 @@ namespace TrendyModa.Controllers
         [HttpPost]
         public async Task<IActionResult> PostAddAction(IFormFile Image, string description)
         {
-            if (Image != null && Image.Length > 0)
+            if (Image != null && Image.Length > 0 && ModelState.IsValid)
             {
                 using (var memoryStream = new MemoryStream())
                 {
@@ -83,6 +83,12 @@ namespace TrendyModa.Controllers
             {
                 return View("PostDelete", p);
             }
+        }
+
+        [HttpGet]
+        public IActionResult EditPost(int id)
+        {
+            return View();
         }
 
     }

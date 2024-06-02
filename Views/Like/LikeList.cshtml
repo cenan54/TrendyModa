@@ -1,39 +1,58 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+@model IEnumerable<Like>
 @{
+    int likeListCount = Model.Count();
 }
 
-@model IEnumerable<Like>
+
 
 <div class="row">
     <div class="col-sm-0 col-lg-2 col-xxl-3"></div>
     <div class="col-sm-12 col-lg-8 col-xxl-6">
 
     <div class="my-3 p-3 bg-white rounded box-shadow">
-        <h3 class="border-bottom border-gray pb-2 mb-0">Beğenen Kişiler</h3>
-        @foreach (var item in Model)
-        {
-            
-            <div class="media text-muted pt-3">
-                @* <img src="~/icons/profile.png " class="mr-2 rounded"> *@
-                <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-                    <div class="d-flex justify-content-between align-items-center w-100">
-                        <strong class="text-gray-dark h5">@item.User.Username </strong>
-                        <strong class="text-gray-dark">Takipçi Sayısı:</strong>
-                        <form asp-controller="Follow" asp-action="FollowAdd" method="post">
-                            <input type="hidden" asp-for="@item.UserId"/>
-                            <button type="submit" class="btn btn-outline-primary">Follow</button>
-                        </form>
-                                
-                    </div>
-                    <span class="d-block">@item.User.Name @item.User.Lastname</span>
-                </div>
-            </div>
-                
+      <h3 class="border-bottom border-primary rounded text-center pb-2 mb-0">@likeListCount Kişi Gönderinizi Beğendi</h3>
+        <h4 class="border-bottom border-gray pb-2 mt-5">Beğenen Kişiler</h4>
+           @{
+               if (likeListCount>0)
+                {
+                    @foreach (var item in Model)
+                    {
 
-        }
-    </div>
+                        <div class="media text-muted pt-3">
+                            @* <img src="~/icons/profile.png " class="mr-2 rounded"> *@
+                            <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                                <div class="d-flex justify-content-between align-items-center w-100">
+                                    <strong class="text-gray-dark h5">@item.User.Username </strong>
+                                    <form asp-controller="Follow" asp-action="FollowAdd" method="post">
+                                        <input type="hidden" asp-for="@item.UserId" />
+                                        <button type="submit" class="btn btn-outline-primary">Follow</button>
+                                    </form>
+
+                                </div>
+                                <span class="d-block">@item.User.Name @item.User.Lastname</span>
+                            </div>
+                        </div>
+
+
+                    }
+                }
+                else
+                {
+                    <div class="media text-muted pt-3">
+                        @* <img src="~/icons/profile.png " class="mr-2 rounded"> *@
+                        <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                            <div class="d-flex justify-content-between align-items-center w-100">
+                            <p>Henüz gönderinizi beğenen yok.</p>
+                            </div>
+                        </div>
+                    </div>
+                            
+                }
+           }
+         </div>
 
     </div>
     <div class="col-sm-0 col-lg-2 col-xxl-3"></div>
