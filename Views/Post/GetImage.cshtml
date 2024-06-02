@@ -58,9 +58,9 @@
                                             <p style="font-weight: bold;" class="card-text ms-3 mt-3">@item.User.Username</p>
                                             <img class="card-img-top rounded-3" src="@imageSrc" alt="Card image cap">
                                             <div class="card-body">
-                                                <p class="card-text">@item.Description</p>
-                                                
-                                                    <span class="d-block">@likeCount Beğeni</span>
+                                                <p class="card-text border-bottom border-2">@item.Description</p>
+
+                                                <span style="color:rgb(186, 6, 90)" class="d-block">@likeCount Beğeni</span>
                                                     <br />
                                                     <div class="btn-group">
                                                         <form asp-controller="Like" asp-action="LikeAdd" method="post">
@@ -75,7 +75,7 @@
                                                         <a type="button" class="btn btn-sm btn-outline-danger" asp-controller="Post" asp-action="Delete" asp-route-id="@item.PhotoId">Sil</a>
                                                     </div>
                                                     <br />
-                                                <div class="mt-2"> <small class="text-muted">@item.CreatedAt</small></div>
+                                                <div class="mt-2"> <small class="text-muted">Oluşturma Tarihi: @item.CreatedAt</small></div>
                                                    
                                                
                                             </div>
