@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/TrendyModa.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
 <body>
     <div class="row my-5">
@@ -27,21 +28,21 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Ana Sayfa</a>
-                        </li>
+                       @*  <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-house me-1"></i>Ana Sayfa</a>
+                        </li> *@
 
                         <li class="nav-item">
-                            <a class="nav-link text-light" href=@Url.Action("PostAdd","Post")>Gönderi Ekle</a>
+                            <a class="nav-link text-light" href=@Url.Action("PostAdd","Post")><i class="bi bi-camera me-1"></i>Gönderi Ekle</a>
                        </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="@Url.Action("GetImage", "Post")">Gönderilerim</a>
+                            <a class="nav-link text-light" href="@Url.Action("GetImage", "Post")"><i class="bi bi-images me-1"></i>Gönderilerim</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="@Url.Action("UsersList", "User")">Kullanıcılar</a>
+                            <a class="nav-link text-light" href="@Url.Action("UsersList", "User")"><i class="bi bi-people me-1"></i>Kullanıcılar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="@Url.Action("LogoutIndex", "Account")">Çıkış Yap</a>
+                            <a class="nav-link text-light" exit href="@Url.Action("LogoutIndex", "Account")"><i class="bi bi-escape me-1"></i>Çıkış Yap</a>
                         </li>
                        
                     </ul>

@@ -10,6 +10,7 @@
 
 @model IEnumerable<Photo>
 
+<partial name="ReturnHome" />
 
 <main role="main">
     <div class="album p-5 bg-light">
@@ -60,14 +61,14 @@
                                             <div class="card-body">
                                                 <p class="card-text border-bottom border-2">@item.Description</p>
 
-                                                <span style="color:rgb(186, 6, 90)" class="d-block">@likeCount Beğeni</span>
+                                                <span style="color:rgb(186, 6, 90)" class="d-block"><i class="bi bi-heart me-2"></i>@likeCount Beğeni</span>
                                                     <br />
-                                                    <div class="btn-group">
+                                                    <div class="btn-group me-3">
                                                         <form asp-controller="Like" asp-action="LikeAdd" method="post">
                                                             <input type="hidden" value="@item.PhotoId" />
                                                             <button type="submit" class="btn btn-sm btn-outline-success">Beğen</button>
                                                         </form>
-                                                        <a type="button" class="btn btn-sm btn-outline-success" asp-controller="Like" asp-action="LikeList" asp-route-id="@item.PhotoId">Beğenenler</a>
+                                                        <a type="button" class="btn btn-sm btn-outline-secondary" asp-controller="Like" asp-action="LikeList" asp-route-id="@item.PhotoId">Beğenenler</a>
                                                         </div>
                                                        
                                                         <div class="btn-group">
