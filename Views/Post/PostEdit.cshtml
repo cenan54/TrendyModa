@@ -8,6 +8,7 @@
     
 }
 
+<partial name="ReturnGetImage" />
 
 <main role="main">
   <div class="album p-5 bg-light">
@@ -23,15 +24,15 @@
                                 <form asp-action="PostEditConfirmed" method="post">
                                     <input type="hidden" name="photoId" value="@Model.PhotoId" />
                                     <div class="form-group">
-                                        <label for="description">Description</label>
-                                        <input type="text" id="description" name="description" class="form-control" value="@Model.Description" />
+                                        <label for="description" class="border-bottom border-3 border-primary">Açıklamayı Düzenleyin</label>
+                                        <input type="text" id="description" name="description" class="form-control mt-3" value="@Model.Description" />
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                                    <button type="submit" class="btn btn-primary mt-2">Kaydet</button>
                                 </form>
                             <br />
 
                             <div class="btn-group">
-                                <a type="button" class="btn btn-sm btn-outline-danger" asp-controller="Post" asp-action="Delete" asp-route-id="@Model.PhotoId">Sil</a>
+                                <a type="button" class="btn btn-sm btn-outline-danger" asp-controller="Post" asp-action="Delete" asp-route-id="@Model.PhotoId">Gönderiyi Sil</a>
                             </div>
                             <br />
                             
