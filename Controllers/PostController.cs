@@ -2,8 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Net.NetworkInformation;
 using TrendyModa.Models;
-using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
+using TrendyModa.ViewModels;
+
 
 
 
@@ -86,13 +87,43 @@ namespace TrendyModa.Controllers
         }
 
         [HttpGet]
-        public IActionResult EditPost(int id)
+        public IActionResult PostEdit(int id)
         {
-            return View();
+            var p = context.Photos.FirstOrDefault(x => x.PhotoId==id);
+            var e = new PostEditVM { 
+                PhotoId = p.PhotoId,
+                Description = p.Description
+            };
+            return View(e);
         }
+
+
+        [HttpPost]
+        public IActionResult PostEditConfirmed(PostEditVM model)
+        {
+            int postId = model.PhotoId;
+            string description = model.Description;
+
+            // Veritabanında güncelleme işlemini gerçekleştirin
+            // Örneğin, Entity Framework ile:
+            var existingRecord = context.Photos.FirstOrDefault(r => r.PhotoId == postId);
+            if (existingRecord != null)
+            {
+                existingRecord.Description = description;
+                context.SaveChanges();
+              //  return RedirectToAction("Details", new { id = existingRecord.PhotoId });
+                return RedirectToAction("GetImage","Post");
+            }
+            else
+            {
+                // Hata durumunda kullanıcıyı hata sayfasına yönlendirin
+                return RedirectToAction("Error");
+            }
+        }
+    }
 
     }
 
    
-}
+
 

@@ -16,6 +16,7 @@
     <div class="album p-5 bg-light">
         <div class="container">
             <div class="row px-5">
+                <h4 class="mb-5 border-primary border-bottom border-3 pb-2">Gönderilerim</h4>
 
                 @* kullanıcının kaç tane post attğını döngü ile bulma işlemi*@
                 @foreach (var item in Model)
@@ -33,14 +34,18 @@
                 }
                 else
                 {
+
                     @foreach (var item in Model)
                     {
                         @* burada login yapan kişinin id si ile database user id kontrol 
                         ekiliyor ki başkasının postu gözükmesin*@
                         if (User.FindFirst(x => x.Type == "UserId").Value == item.UserId.ToString())
                         {
+
                             string imageBase64 = Convert.ToBase64String(item.Image);
                             string imageSrc = String.Format("data:image;base64,{0}", imageBase64);
+                            
+
                             int likeCount = 0;
                             foreach (var like in item.Likes)
                             {
@@ -54,6 +59,7 @@
                             <div class="row">
                                 <div class="col-sm-0 col-lg-2 col-xxl-3"></div>
                                 <div class="col-sm-12 col-lg-8 col-xxl-6">
+                                   
                                     <div class="col-12">
                                         <div class="card mb-4 box-shadow border border-3 rounded">
                                             <p style="font-weight: bold;" class="card-text ms-3 mt-3">@item.User.Username</p>
@@ -63,18 +69,18 @@
 
                                                 <span style="color:rgb(186, 6, 90)" class="d-block"><i class="bi bi-heart me-2"></i>@likeCount Beğeni</span>
                                                     <br />
-                                                    <div class="btn-group me-3">
+                                                       <div class="btn-group me-3">
                                                         <form asp-controller="Like" asp-action="LikeAdd" method="post">
                                                             <input type="hidden" value="@item.PhotoId" />
                                                             <button type="submit" class="btn btn-sm btn-outline-success">Beğen</button>
                                                         </form>
                                                         <a type="button" class="btn btn-sm btn-outline-secondary" asp-controller="Like" asp-action="LikeList" asp-route-id="@item.PhotoId">Beğenenler</a>
-                                                        </div>
+                                                       </div>
                                                        
-                                                        <div class="btn-group">
-                                                        <a type="button" class="btn btn-sm btn-outline-warning">Düzenle</a>
+                                                      <div class="btn-group">
+                                                        <a type="button" class="btn btn-sm btn-outline-warning" asp-controller="Post" asp-action="PostEdit" asp-route-id="@item.PhotoId">Düzenle</a>
                                                         <a type="button" class="btn btn-sm btn-outline-danger" asp-controller="Post" asp-action="Delete" asp-route-id="@item.PhotoId">Sil</a>
-                                                    </div>
+                                                      </div>
                                                     <br />
                                                 <div class="mt-2"> <small class="text-muted">Oluşturma Tarihi: @item.CreatedAt</small></div>
                                                    
@@ -86,7 +92,6 @@
                                 <div class="col-sm-0 col-lg-2 col-xxl-3"></div>
                             </div>
 
-                           
                         }
                     }
                 }
