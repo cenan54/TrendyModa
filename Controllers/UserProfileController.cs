@@ -1,14 +1,26 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using TrendyModa.Models;
 
 namespace TrendyModa.Controllers
 {
     [Authorize]
     public class UserProfileController : Controller
     {
-        public IActionResult Index()
+        private readonly TrendyModaDbContext context;
+
+        public UserProfileController()
         {
-            return View();
+            context = new TrendyModaDbContext();
+        }
+
+
+        [Authorize]
+        public IActionResult MyAccount()
+        {
+            int claimId = Convert.ToInt32(User.FindFirst(x => x.Type == "UserId").Value);
+            var u = context.Users.FirstOrDefault(y => y.UserId == claimId);
+            return View(u);
         }
     }
 }
