@@ -15,12 +15,26 @@ namespace TrendyModa.Controllers
         }
 
 
-        [Authorize]
+        [HttpGet]
         public IActionResult MyAccount()
         {
             int claimId = Convert.ToInt32(User.FindFirst(x => x.Type == "UserId").Value);
             var u = context.Users.FirstOrDefault(y => y.UserId == claimId);
             return View(u);
+        }
+
+
+        [HttpPost]
+        public IActionResult MyAccountEdit([FromForm] User data)
+        {
+            if (ModelState.IsValid)
+            {
+                context.Users.Update(data);
+                context.SaveChanges();
+                return RedirectToAction("Logout","Account");
+            }
+            return RedirectToAction("Index", "Home");
+
         }
     }
 }
