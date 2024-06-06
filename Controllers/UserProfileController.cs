@@ -31,7 +31,7 @@ namespace TrendyModa.Controllers
             {
                 context.Users.Update(data);
                 context.SaveChanges();
-                return RedirectToAction("Logout","Account");
+                return RedirectToAction("LogoutIndex","Account");
             }
             return RedirectToAction("Index", "Home");
 

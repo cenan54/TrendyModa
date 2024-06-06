@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TrendyModa.Models;
 using TrendyModa.ViewModels;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+
 
 namespace TrendyModa.Controllers
 {
@@ -30,22 +30,21 @@ namespace TrendyModa.Controllers
         }
 
         [HttpPost]
-        public IActionResult LikeAdd(int data)
+        public IActionResult LikeAdd([FromForm] Like l)
         {
-            Photo p = context.Photos.FirstOrDefault(x => x.PhotoId == data);
-            int u = Convert.ToInt32(User.FindFirst(x => x.Type == "UserId").Value);
-            if (p!=null && u!=null)
+            if (l != null)
             {
-                var l = new Like
-                {
-                    UserId = u,
-                    PhotoId = p.PhotoId
-                };
-                context.Add(l);
+
+              //  var existingLike = context.Likes.FirstOrDefault(l => l.UserId == userId && l.PhotoId == photoId);
+                context.Likes.Add(l);
                 context.SaveChanges();
+                return RedirectToAction("GetImage", "Post");
             }
-            
-            return RedirectToAction("Index", "Home");
+            else
+            {
+                return RedirectToAction("Index", "Error");
+            }
+
         }
     }
 }
