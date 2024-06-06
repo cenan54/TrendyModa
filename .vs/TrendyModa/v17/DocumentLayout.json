@@ -42,8 +42,7 @@
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
               "ViewState": "AQIAAB4AAAAAAAAAAAAAACQAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-06T00:21:08.673Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-06T00:21:08.673Z"
             },
             {
               "$type": "Document",
@@ -53,7 +52,7 @@
               "RelativeDocumentMoniker": "Views\\UserProfile\\MyAccount.cshtml",
               "ToolTip": "C:\\MyProjects\\sistem-analiz-proje\\TrendyModa\\Views\\UserProfile\\MyAccount.cshtml",
               "RelativeToolTip": "Views\\UserProfile\\MyAccount.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAiAAAA",
+              "ViewState": "AQIAAD4AAAAAAAAAAAAAAEQAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-06T00:16:49.358Z",
               "EditorCaption": ""
@@ -68,8 +67,7 @@
               "RelativeToolTip": "Controllers\\UserProfileController.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAAwBoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T22:42:34.787Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T22:42:34.787Z"
             },
             {
               "$type": "Document",
@@ -81,8 +79,7 @@
               "RelativeToolTip": "Views\\Post\\PostAdd.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-06T00:02:22.052Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-06T00:02:22.052Z"
             },
             {
               "$type": "Document",
@@ -94,8 +91,7 @@
               "RelativeToolTip": "Views\\Post\\GetImage.cshtml",
               "ViewState": "AQIAAAwAAAAAAAAAAAAAAFUAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-03T22:49:38.17Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-03T22:49:38.17Z"
             }
           ]
         }
