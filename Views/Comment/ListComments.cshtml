@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<Comment>
+@{
+}
+
+<partial name="ReturnGetImage" />
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2 mt-5">
+            <h3>Yorumlar</h3>
+            <ul class="list-group">
+                @foreach (var item in Model)
+                {
+                    <li class="list-group-item">
+                        <div class="d-flex justify-content-between">
+                            <span>@item.User.Username</span>
+                            @* <span>@item.ToShortDateString()</span> *@
+                        </div>
+                        <p>@item.CommentText</p>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

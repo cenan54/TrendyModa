@@ -50,7 +50,7 @@ namespace TrendyModa.Controllers
                 }
             }
 
-            return RedirectToAction("Index","Home"); // başka bir view'a yönlendirme 
+            return RedirectToAction("Index", "Error"); // başka bir view'a yönlendirme 
         }
 
         [HttpGet]

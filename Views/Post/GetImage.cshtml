@@ -82,7 +82,8 @@
                                                        
                                                         
                                                         <a type="button" class="btn btn-sm btn-outline-secondary" asp-controller="Like" asp-action="LikeList" asp-route-id="@item.PhotoId">Beğenenler</a>
-                                                       </div>
+                                                        <a type="button" class="btn btn-sm btn-outline-secondary" asp-controller="Comment" asp-action="ListComments" asp-route-id="@item.PhotoId">Yorumlar</a>
+                                                    </div>
                                                        
                                                       <div class="btn-group">
                                                         <a type="button" class="btn btn-sm btn-outline-warning" asp-controller="Post" asp-action="PostEdit" asp-route-id="@item.PhotoId">Düzenle</a>
