@@ -35,10 +35,20 @@ namespace TrendyModa.Controllers
             if (l != null)
             {
 
-              //  var existingLike = context.Likes.FirstOrDefault(l => l.UserId == userId && l.PhotoId == photoId);
-                context.Likes.Add(l);
-                context.SaveChanges();
-                return RedirectToAction("GetImage", "Post");
+                var existingLike = context.Likes.FirstOrDefault(x => x.UserId == l.UserId && x.PhotoId == l.PhotoId);
+                if (existingLike != null)
+                {
+                    context.Likes.Remove(existingLike);
+                    context.SaveChanges();
+                    return RedirectToAction("GetImage", "Post");
+                }
+                else
+                {
+                    context.Likes.Add(l);
+                    context.SaveChanges();
+                    return RedirectToAction("GetImage", "Post");
+                }
+               
             }
             else
             {

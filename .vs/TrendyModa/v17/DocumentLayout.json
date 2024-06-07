@@ -34,8 +34,7 @@
               "RelativeToolTip": "Views\\Post\\PostAdd.cshtml",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-06T21:37:23.675Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-06T21:37:23.675Z"
             },
             {
               "$type": "Document",
@@ -45,7 +44,7 @@
               "RelativeDocumentMoniker": "Controllers\\LikeController.cs",
               "ToolTip": "C:\\MyProjects\\sistem-analiz-proje\\TrendyModa\\Controllers\\LikeController.cs",
               "RelativeToolTip": "Controllers\\LikeController.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAYwCUAAAAQAAAA",
+              "ViewState": "AQIAABwAAAAAAAAAAAAYwCoAAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-06T20:52:48.081Z",
               "EditorCaption": ""
@@ -60,8 +59,7 @@
               "RelativeToolTip": "Views\\Post\\GetImage.cshtml",
               "ViewState": "AQIAADAAAAAAAAAAAAAAAEoAAABnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-03T22:49:38.17Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-03T22:49:38.17Z"
             }
           ]
         }
