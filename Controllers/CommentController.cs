@@ -22,5 +22,12 @@ namespace TrendyModa.Controllers
             var comments = context.Comments.Where(x=>x.PhotoId==id).Include(u => u.User).ToList();
             return View(comments);
         }
+
+        [HttpGet]
+        public IActionResult AddComment(int id)
+        {
+            var comment = context.Comments.FirstOrDefault(x => x.PhotoId==id);
+            return View(comment);
+        }
     }
 }

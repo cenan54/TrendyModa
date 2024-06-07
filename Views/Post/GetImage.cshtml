@@ -44,7 +44,7 @@
 
                             string imageBase64 = Convert.ToBase64String(item.Image);
                             string imageSrc = String.Format("data:image;base64,{0}", imageBase64);
-                            
+
 
                             int likeCount = 0;
                             foreach (var like in item.Likes)
@@ -55,6 +55,15 @@
                                 }
                             }
 
+                            int commentCount = 0;
+                            foreach (var comment in item.Comments)
+                            {
+                                if (comment.PhotoId == item.PhotoId)
+                                {
+                                    commentCount++;
+                                }
+                            }
+
 
                             <div class="row">
                                 <div class="col-sm-0 col-lg-2 col-xxl-3"></div>
@@ -62,32 +71,37 @@
                                    
                                     <div class="col-12">
                                         <div class="card mb-4 box-shadow border border-3 rounded">
-                                            <p style="font-weight: bold;" class="card-text ms-3 mt-3">@item.User.Username</p>
+                                            <div class="col-12 bg-dark bg-gradient rounded rounded-3">
+                                                <p style="font-weight: bold;" class="text-light card-text ms-3 mt-3 mb-3">@item.User.Username</p>
+                                            </div>
+                                            
                                             <img class="card-img-top rounded-3" src="@imageSrc" alt="Card image cap">
                                             <div class="card-body">
-                                                <p class="card-text border-bottom border-2">@item.Description</p>
 
-                                                <span style="color:rgb(186, 6, 90)" class="d-block"><i class="bi bi-heart me-2"></i>@likeCount Beğeni</span>
-                                                    <br />
-                                                       <div class="btn-group me-3">
+                                                <div class=" border-bottom border-2 mb-4">
+                                                   <p class="card-text mb-2">@item.Description</p>
+                                               </div>
 
-
+                                                <div class="btn-group me-2">
                                                         <form asp-controller="Like" asp-action="LikeAdd" method="post">
                                                         <input type="hidden" name="UserId" value="@item.UserId">
                                                         <input type="hidden" name="PhotoId" value="@item.PhotoId">
-                                                        <button type="submit" class="btn btn-sm btn-outline-success">Beğen</button>
+                                                        <button type="submit" class="btn btn-sm text-light rounded" style="background: rgb(186, 6, 90); box-shadow: none">
+                                                            <i class="bi bi-heart"></i>
+                                                        </button>
                                                         </form>
-                                                       
 
-                                                       
-                                                        
-                                                        <a type="button" class="btn btn-sm btn-outline-secondary" asp-controller="Like" asp-action="LikeList" asp-route-id="@item.PhotoId">Beğenenler</a>
-                                                        <a type="button" class="btn btn-sm btn-outline-secondary" asp-controller="Comment" asp-action="ListComments" asp-route-id="@item.PhotoId">Yorumlar</a>
+                                                    <a type="button" style="color:rgb(186, 6, 90); border: none" class="btn btn-sm" asp-controller="Like" asp-action="LikeList" asp-route-id="@item.PhotoId">@likeCount Beğeni</a>
+                                                </div>
+
+                                                <div class="btn-group me-5">
+                                                    <a type="button" class="btn btn-sm text-light rounded" style="background: rgb(3, 158, 153); box-shadow: none" asp-controller="Comment" asp-action="ListComments" asp-route-id="@item.PhotoId"><i class="bi bi-chat"></i></a>
+                                                    <a type="button" style="color:rgb(3, 158, 153); border: none" class="btn btn-sm" asp-controller="Comment" asp-action="ListComments" asp-route-id="@item.PhotoId">@commentCount Yorum</a>
                                                     </div>
                                                        
                                                       <div class="btn-group">
-                                                        <a type="button" class="btn btn-sm btn-outline-warning" asp-controller="Post" asp-action="PostEdit" asp-route-id="@item.PhotoId">Düzenle</a>
-                                                        <a type="button" class="btn btn-sm btn-outline-danger" asp-controller="Post" asp-action="Delete" asp-route-id="@item.PhotoId">Sil</a>
+                                                        <a type="button" class="btn btn-sm btn-outline-warning" style="border: none" asp-controller="Post" asp-action="PostEdit" asp-route-id="@item.PhotoId">Düzenle</a>
+                                                        <a type="button" class="btn btn-sm btn-outline-danger" style="border: none" asp-controller="Post" asp-action="Delete" asp-route-id="@item.PhotoId">Sil</a>
                                                       </div>
                                                     <br />
                                                 <div class="mt-2"> <small class="text-muted">Oluşturma Tarihi: @item.CreatedAt</small></div>

@@ -3,24 +3,36 @@
   "WorkspaceRootPath": "C:\\MyProjects\\sistem-analiz-proje\\TrendyModa\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F833C8C1-BD6F-4734-A274-D97FE686257D}|TrendyModa.csproj|c:\\myprojects\\sistem-analiz-proje\\trendymoda\\views\\comment\\listcomments.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F833C8C1-BD6F-4734-A274-D97FE686257D}|TrendyModa.csproj|solutionrelative:views\\comment\\listcomments.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{F833C8C1-BD6F-4734-A274-D97FE686257D}|TrendyModa.csproj|c:\\myprojects\\sistem-analiz-proje\\trendymoda\\views\\post\\getimage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F833C8C1-BD6F-4734-A274-D97FE686257D}|TrendyModa.csproj|solutionrelative:views\\post\\getimage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F833C8C1-BD6F-4734-A274-D97FE686257D}|TrendyModa.csproj|c:\\myprojects\\sistem-analiz-proje\\trendymoda\\controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F833C8C1-BD6F-4734-A274-D97FE686257D}|TrendyModa.csproj|solutionrelative:controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F833C8C1-BD6F-4734-A274-D97FE686257D}|TrendyModa.csproj|c:\\myprojects\\sistem-analiz-proje\\trendymoda\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F833C8C1-BD6F-4734-A274-D97FE686257D}|TrendyModa.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F833C8C1-BD6F-4734-A274-D97FE686257D}|TrendyModa.csproj|c:\\myprojects\\sistem-analiz-proje\\trendymoda\\controllers\\likecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F833C8C1-BD6F-4734-A274-D97FE686257D}|TrendyModa.csproj|solutionrelative:controllers\\likecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F833C8C1-BD6F-4734-A274-D97FE686257D}|TrendyModa.csproj|c:\\myprojects\\sistem-analiz-proje\\trendymoda\\views\\userprofile\\myaccount.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F833C8C1-BD6F-4734-A274-D97FE686257D}|TrendyModa.csproj|solutionrelative:views\\userprofile\\myaccount.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F833C8C1-BD6F-4734-A274-D97FE686257D}|TrendyModa.csproj|c:\\myprojects\\sistem-analiz-proje\\trendymoda\\controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F833C8C1-BD6F-4734-A274-D97FE686257D}|TrendyModa.csproj|solutionrelative:controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F833C8C1-BD6F-4734-A274-D97FE686257D}|TrendyModa.csproj|c:\\myprojects\\sistem-analiz-proje\\trendymoda\\views\\post\\getimage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F833C8C1-BD6F-4734-A274-D97FE686257D}|TrendyModa.csproj|solutionrelative:views\\post\\getimage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{F833C8C1-BD6F-4734-A274-D97FE686257D}|TrendyModa.csproj|c:\\myprojects\\sistem-analiz-proje\\trendymoda\\controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F833C8C1-BD6F-4734-A274-D97FE686257D}|TrendyModa.csproj|solutionrelative:controllers\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F833C8C1-BD6F-4734-A274-D97FE686257D}|TrendyModa.csproj|c:\\myprojects\\sistem-analiz-proje\\trendymoda\\views\\comment\\addcomment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F833C8C1-BD6F-4734-A274-D97FE686257D}|TrendyModa.csproj|solutionrelative:views\\comment\\addcomment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F833C8C1-BD6F-4734-A274-D97FE686257D}|TrendyModa.csproj|c:\\myprojects\\sistem-analiz-proje\\trendymoda\\views\\comment\\listcomments.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F833C8C1-BD6F-4734-A274-D97FE686257D}|TrendyModa.csproj|solutionrelative:views\\comment\\listcomments.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F833C8C1-BD6F-4734-A274-D97FE686257D}|TrendyModa.csproj|c:\\myprojects\\sistem-analiz-proje\\trendymoda\\controllers\\likecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F833C8C1-BD6F-4734-A274-D97FE686257D}|TrendyModa.csproj|solutionrelative:controllers\\likecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,11 +42,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\MyProjects\\sistem-analiz-proje\\TrendyModa\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\MyProjects\\sistem-analiz-proje\\TrendyModa\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAC8AAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-07T19:24:45.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "MyAccount.cshtml",
+              "DocumentMoniker": "C:\\MyProjects\\sistem-analiz-proje\\TrendyModa\\Views\\UserProfile\\MyAccount.cshtml",
+              "RelativeDocumentMoniker": "Views\\UserProfile\\MyAccount.cshtml",
+              "ToolTip": "C:\\MyProjects\\sistem-analiz-proje\\TrendyModa\\Views\\UserProfile\\MyAccount.cshtml",
+              "RelativeToolTip": "Views\\UserProfile\\MyAccount.cshtml",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABYAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-07T19:21:47.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AddComment.cshtml",
+              "DocumentMoniker": "C:\\MyProjects\\sistem-analiz-proje\\TrendyModa\\Views\\Comment\\AddComment.cshtml",
+              "RelativeDocumentMoniker": "Views\\Comment\\AddComment.cshtml",
+              "ToolTip": "C:\\MyProjects\\sistem-analiz-proje\\TrendyModa\\Views\\Comment\\AddComment.cshtml",
+              "RelativeToolTip": "Views\\Comment\\AddComment.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-07T19:19:32.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "LikeController.cs",
               "DocumentMoniker": "C:\\MyProjects\\sistem-analiz-proje\\TrendyModa\\Controllers\\LikeController.cs",
               "RelativeDocumentMoniker": "Controllers\\LikeController.cs",
@@ -42,44 +93,43 @@
               "RelativeToolTip": "Controllers\\LikeController.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAAwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T18:10:51.124Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-07T18:10:51.124Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "CommentController.cs",
               "DocumentMoniker": "C:\\MyProjects\\sistem-analiz-proje\\TrendyModa\\Controllers\\CommentController.cs",
               "RelativeDocumentMoniker": "Controllers\\CommentController.cs",
               "ToolTip": "C:\\MyProjects\\sistem-analiz-proje\\TrendyModa\\Controllers\\CommentController.cs",
               "RelativeToolTip": "Controllers\\CommentController.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBUAAABCAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBoAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-07T17:33:28.361Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "ListComments.cshtml",
               "DocumentMoniker": "C:\\MyProjects\\sistem-analiz-proje\\TrendyModa\\Views\\Comment\\ListComments.cshtml",
               "RelativeDocumentMoniker": "Views\\Comment\\ListComments.cshtml",
               "ToolTip": "C:\\MyProjects\\sistem-analiz-proje\\TrendyModa\\Views\\Comment\\ListComments.cshtml",
               "RelativeToolTip": "Views\\Comment\\ListComments.cshtml",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAtAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-07T17:48:38.267Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "GetImage.cshtml",
               "DocumentMoniker": "C:\\MyProjects\\sistem-analiz-proje\\TrendyModa\\Views\\Post\\GetImage.cshtml",
               "RelativeDocumentMoniker": "Views\\Post\\GetImage.cshtml",
               "ToolTip": "C:\\MyProjects\\sistem-analiz-proje\\TrendyModa\\Views\\Post\\GetImage.cshtml",
               "RelativeToolTip": "Views\\Post\\GetImage.cshtml",
-              "ViewState": "AQIAAEIAAAAAAAAAAAAAAFQAAACjAAAA",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAAAFMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-07T17:36:06.852Z",
               "EditorCaption": ""
@@ -92,7 +142,7 @@
               "RelativeDocumentMoniker": "Controllers\\PostController.cs",
               "ToolTip": "C:\\MyProjects\\sistem-analiz-proje\\TrendyModa\\Controllers\\PostController.cs",
               "RelativeToolTip": "Controllers\\PostController.cs",
-              "ViewState": "AQIAADUAAAAAAAAAAAAgwD4AAAAJAAAA",
+              "ViewState": "AQIAACwAAAAAAAAAAAAgwDoAAABoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-07T17:52:58.535Z",
               "EditorCaption": ""

@@ -56,7 +56,7 @@ namespace TrendyModa.Controllers
         [HttpGet]
         public IActionResult GetImage()
         {
-            var images = context.Photos.Include(p => p.User).Include(l => l.Likes).ToList();
+            var images = context.Photos.Include(p => p.User).Include(l => l.Likes).Include(c=>c.Comments).ToList();
             
             
                 return View(images);
