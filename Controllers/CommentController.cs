@@ -24,10 +24,62 @@ namespace TrendyModa.Controllers
         }
 
         [HttpGet]
-        public IActionResult AddComment(int id)
+        public IActionResult AddEditCommentIndex(int id)
         {
             var comment = context.Comments.FirstOrDefault(x => x.PhotoId==id);
-            return View(comment);
+            if (comment == null)
+            {
+                return View("AddComment",id);
+            }
+            else
+            {
+                return View("EditComment",comment);
+            }
+            
+            
+        }
+
+        [HttpPost]
+        public IActionResult AddComment([FromForm] Comment comment)
+        {
+           if (comment == null)
+            {
+                return RedirectToAction("Index", "Error");
+            }
+           else
+            {
+                context.Comments.Add(comment);
+                context.SaveChanges();
+                return RedirectToAction("GetImage", "Post");
+            }
+           
+        }
+
+        [HttpPost]
+        public IActionResult EditComment([FromForm] Comment comment)
+        {
+            if (comment!=null)
+            {
+                //context.Comments.Update(comment);
+                //context.SaveChanges();
+                //return RedirectToAction("GetImage", "Post");
+
+                Comment c = context.Comments.FirstOrDefault(x => x.PhotoId == comment.PhotoId && x.UserId == comment.UserId);
+                c.CommentText = comment.CommentText;
+                context.Comments.Update(c);
+                context.SaveChanges();
+                return RedirectToAction("GetImage", "Post");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Error");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult DeleteComment(int id)
+        {
+            return View();
         }
     }
 }

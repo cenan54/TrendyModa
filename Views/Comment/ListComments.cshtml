@@ -8,22 +8,51 @@
 
 <partial name="ReturnGetImage" />
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 offset-md-2 mt-5">
-            <h3>Yorumlar</h3>
-            <ul class="list-group">
-                @foreach (var item in Model)
-                {
-                    <li class="list-group-item">
-                        <div class="d-flex justify-content-between">
-                            <span>@item.User.Username</span>
-                            @* <span>@item.ToShortDateString()</span> *@
-                        </div>
-                        <p>@item.CommentText</p>
-                    </li>
-                }
-            </ul>
+@{
+    int commentCount = 0;
+    @foreach (var item in Model)
+    {
+        commentCount++;
+    }
+
+    if (commentCount>0)
+    {
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2 mt-5">
+                    <h3 class="border-bottom border-2 border-primary pb-2">Yorumlar</h3>
+                    <ul class="list-group mt-3">
+                        @foreach (var item in Model)
+                        {
+                            <li class="list-group-item">
+                                <div class="d-flex justify-content-between">
+                                    <strong class="h5 border-bottom border-2">@item.User.Username</strong>
+                                    @* <span>@item.ToShortDateString()</span> *@
+                                </div>
+                                <p>@item.CommentText</p>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    }
+    else
+    {
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2 mt-5">
+                    <h3>Yorumlar</h3>
+                    
+                </div>
+            </div>
+        </div>
+    }
+
+
+}
+
+
+
+
+

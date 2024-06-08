@@ -68,10 +68,10 @@
             <form asp-controller="UserProfile" asp-action="MyAccountEdit" method="post">
                 <input type="hidden" class="form-control" asp-for="UserId" value="@Model.UserId" />
             <div class="p-3 py-5">
-                <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="d-flex justify-content-between align-items-center">
                     <h4 class="text-right">Profil Ayarları</h4>
                 </div>
-               
+                    <div class="border-top border-3 mb-3" style="color: #682773"></div>
                 <div class="row mt-2">
                     <div class="col-md-12"><label class="labels">Kullanıcı Adı</label><input asp-for="Username" type="text" class="form-control" placeholder="Kullanıcı Adı" value="@Model.Username"></div>
                 </div>
@@ -103,7 +103,7 @@
                     <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value=""></div>
                     <div class="col-md-6"><label class="labels">State/Region</label><input type="text" class="form-control" value="" placeholder="state"></div>
                 </div> *@
-                <div class="mt-5 text-center"><button class="btn btn-success mb-5" type="submit">Profili Kaydet</button></div>
+                <div class="mt-5 text-center"><button class="btn btn-outline-success mb-5" type="submit">Profili Kaydet</button></div>
             </form>
             </div>
     </div>

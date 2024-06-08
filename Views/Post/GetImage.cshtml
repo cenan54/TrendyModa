@@ -95,13 +95,13 @@
                                                 </div>
 
                                                 <div class="btn-group me-5">
-                                                    <a type="button" class="btn btn-sm text-light rounded" style="background: rgb(3, 158, 153); box-shadow: none" asp-controller="Comment" asp-action="ListComments" asp-route-id="@item.PhotoId"><i class="bi bi-chat"></i></a>
+                                                    <a type="button" class="btn btn-sm text-light rounded" style="background: rgb(3, 158, 153); box-shadow: none" asp-controller="Comment" asp-action="AddEditCommentIndex" asp-route-id="@item.PhotoId"><i class="bi bi-chat"></i></a>
                                                     <a type="button" style="color:rgb(3, 158, 153); border: none" class="btn btn-sm" asp-controller="Comment" asp-action="ListComments" asp-route-id="@item.PhotoId">@commentCount Yorum</a>
                                                     </div>
                                                        
                                                       <div class="btn-group">
-                                                        <a type="button" class="btn btn-sm btn-outline-warning" style="border: none" asp-controller="Post" asp-action="PostEdit" asp-route-id="@item.PhotoId">Düzenle</a>
-                                                        <a type="button" class="btn btn-sm btn-outline-danger" style="border: none" asp-controller="Post" asp-action="Delete" asp-route-id="@item.PhotoId">Sil</a>
+                                                    <a type="button" class="btn btn-outline-warning rounded" style="border: none" asp-controller="Post" asp-action="PostEdit" asp-route-id="@item.PhotoId"><i class="bi bi-pencil-square"></i></a>
+                                                    <a type="button" class="btn btn-outline-danger rounded" style="border: none" asp-controller="Post" asp-action="Delete" asp-route-id="@item.PhotoId"><i class="bi bi-trash"></i></a>
                                                       </div>
                                                     <br />
                                                 <div class="mt-2"> <small class="text-muted">Oluşturma Tarihi: @item.CreatedAt</small></div>

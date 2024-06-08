@@ -1,5 +1,31 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+@model int
 @{
+    ViewData["Title"] = "Yorum Ekle";
+    string userId = User.FindFirst(x => x.Type == "UserId").Value;
 }
+
+<partial name="ReturnGetImage" />
+
+<div class="row">
+
+    <div class="col-sm-0 col-lg-2 col-xxl-3"></div>
+    <div class="col-sm-12 col-lg-8 col-xxl-6">
+        <div class="container mt-4">
+            <h1>Yorum Ekle</h1>
+            <form asp-controller="Comment" asp-action="AddComment" method="post">
+                <input type="hidden" name="PhotoId" value="@Model" />
+                <input type="hidden" name="UserId" value="@userId" />
+                <div class="form-group">
+                    <label for="CommentText">Yorumunuz:</label>
+                    <textarea id="CommentText" name="CommentText" class="form-control" rows="4" name="CommentText"></textarea>
+                </div>
+                <button type="submit" class="btn btn-outline-primary mt-3">Yorum Ekle</button>
+            </form>
+        </div>
+    </div>
+    <div class="col-sm-0 col-lg-2 col-xxl-3"></div>
+
+</div>
