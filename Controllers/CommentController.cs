@@ -79,7 +79,20 @@ namespace TrendyModa.Controllers
         [HttpPost]
         public IActionResult DeleteComment(int id)
         {
-            return View();
+            if (id == 0)
+            {
+                return RedirectToAction("Index", "Error");
+            }
+            else
+            {
+                var c = context.Comments.FirstOrDefault(x => x.CommentId == id);
+                context.Comments.Remove(c);
+                context.SaveChanges();
+                return RedirectToAction("GetImage", "Post");
+            }
+
+            
+
         }
     }
 }

@@ -13,17 +13,21 @@
     <div class="col-sm-0 col-lg-2 col-xxl-3"></div>
     <div class="col-sm-12 col-lg-8 col-xxl-6">
         <div class="container mt-4">
-            <h1>Yorumu Düzelt</h1>
+            <h1>Yorumu Düzenle</h1>
             <form asp-controller="Comment" asp-action="EditComment" method="post">
-                <input asp-for="CommentId" type="hidden" name="CommentId" value="@Model.CommentId" />
+                <input type="hidden" name="CommentId" value="@Model.CommentId" />
                 <input type="hidden" name="PhotoId" value="@Model.PhotoId" />
                 <input type="hidden" name="UserId" value="@Model.UserId" />
                 <div class="form-group">
                     <label for="CommentText">Yorumunuz:</label>
                     <textarea id="CommentText" name="CommentText" class="form-control" rows="4" placeholder="Yorum ekleyin...">@Model.CommentText</textarea>
                 </div>
-                <button type="submit" class="btn btn-outline-success mt-3">Yorumu Düzelt</button>
+                <button type="submit" class="btn btn-outline-success mt-3 mb-5">Düzenlemeyi Onayla</button>
             </form>
+            <form asp-controller="Comment" asp-action="DeleteComment" method="post">
+                <button asp-controller="Comment" class="btn btn-outline-danger" asp-action="DeleteComment" asp-route-id="@Model.CommentId">Yorumu Sil</button>
+            </form>
+            
         </div>
     </div>
 
