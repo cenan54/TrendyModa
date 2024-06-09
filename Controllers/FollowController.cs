@@ -17,23 +17,32 @@ namespace TrendyModa.Controllers
         }
 
         [HttpPost]
-        public IActionResult FollowAdd([FromForm] FollowAddVM _fallowee)
+        public IActionResult FollowAddOrRemove([FromForm] Follow flw)
         {
-            int follower = Convert.ToInt32(User.FindFirst(x => x.Type == "UserId").Value);
-            int followee = _fallowee.FalloweeId;
-
-            
-            Follow f = new Follow
+           if (flw == null)
             {
-                FalloweeId = followee,
-                FallowerId = follower
-            };
-            context.Follows.Add(f);
-            context.SaveChanges();
+                return RedirectToAction("Index", "Error");
+            }
+            else
+            {
+                var f = context.Follows.FirstOrDefault(x=>x.FallowerId==flw.FallowerId && x.FalloweeId==flw.FalloweeId);
+
+                if (f==null)
+                {
+                    context.Follows.Add(flw);
+                    context.SaveChanges();
+                    return RedirectToAction("UsersList", "User");
+                }
+                else
+                {
+                    context.Follows.Remove(f);
+                    context.SaveChanges();
+                    return RedirectToAction("UsersList", "User");
+                }
+
+                
+            }
             
-
-
-            return RedirectToAction("Index","Home");
         }
     }
 }
