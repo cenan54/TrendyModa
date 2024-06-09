@@ -14,9 +14,16 @@ namespace TrendyModa.Controllers
             context = new TrendyModaDbContext();
         }
 
-
         [HttpGet]
         public IActionResult MyAccount()
+        {
+            int claimId = Convert.ToInt32(User.FindFirst(x => x.Type == "UserId").Value);
+            var u = context.Users.FirstOrDefault(y => y.UserId == claimId);
+            return View(u);
+        }
+
+        [HttpGet]
+        public IActionResult MyAccountEditIndex()
         {
             int claimId = Convert.ToInt32(User.FindFirst(x => x.Type == "UserId").Value);
             var u = context.Users.FirstOrDefault(y => y.UserId == claimId);

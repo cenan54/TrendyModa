@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using TrendyModa.Models;
 using TrendyModa.ViewModels;
 using Microsoft.EntityFrameworkCore;
+using TrendyModa.Repositories;
 
 namespace TrendyModa.Controllers
 {
@@ -11,9 +12,11 @@ namespace TrendyModa.Controllers
     public class FollowController : Controller
     {
         public readonly TrendyModaDbContext context;
+        private readonly FollowRepository followRepository;
         public FollowController()
         {
             context = new TrendyModaDbContext();
+            followRepository = new FollowRepository(context);
         }
 
         [HttpPost]
@@ -40,9 +43,25 @@ namespace TrendyModa.Controllers
                     return RedirectToAction("UsersList", "User");
                 }
 
-                
             }
             
         }
+
+        
+            public IActionResult Followers(int id)
+            {
+                var followers = followRepository.GetFollowers(id);
+                return View(followers);
+            }
+
+            public IActionResult Followings(int id)
+            {
+                var followings = followRepository.GetFollowings(id);
+                return View(followings);
+            }
+        
+
+
+
     }
 }

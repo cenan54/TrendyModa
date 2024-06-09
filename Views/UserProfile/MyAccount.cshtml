@@ -3,125 +3,40 @@
 *@
 @model TrendyModa.Models.User
 @{
-    ViewData["Title"] = "Hesabım";
+    ViewData["Title"] = "Profilim";
 }
 
 <partial name="ReturnHome" />
 
-<head>
-    <style>
-        body {
-            background: rgb(99, 39, 120)
-        }
-
-        .form-control:focus {
-            box-shadow: none;
-            border-color: #BA68C8
-        }
-
-        .button-save {
-            background: rgb(99, 39, 120);
-            color: white;
-            box-shadow: none;
-            border: none
-        }
-
-            .profile-button:hover {
-                background: #682773
-            }
-
-            .profile-button:focus {
-                background: #682773;
-                box-shadow: none
-            }
-
-            .profile-button:active {
-                background: #682773;
-                box-shadow: none
-            }
-
-        .back:hover {
-            color: #682773;
-            cursor: pointer
-        }
-
-        .labels {
-            font-size: 15px;
-            color: #682773;
-        }
-
-        .add-experience:hover {
-            background: #BA68C8;
-            color: #fff;
-            cursor: pointer;
-            border: solid 1px #BA68C8
-        }
-    </style>
-</head>
 
 <div class="container rounded bg-white mt-5 mb-5">
     <div class="row">
         <div class="col-md-3 border-right">
-          
         </div>
         <div class="col-md-5 border-right">
 
-            <form asp-controller="UserProfile" asp-action="MyAccountEdit" method="post">
-                <input type="hidden" class="form-control" asp-for="UserId" value="@Model.UserId" />
-            <div class="p-3 py-5">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h4 class="text-right">Profil Ayarları</h4>
-                </div>
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="text-right">Profilim</h4> <a class="btn btn-sm btn-outline-primary" style="border: none" asp-controller="UserProfile" asp-action="MyAccountEditIndex">Profili Düzenle</a>
+                    </div>
                     <div class="border-top border-3 mb-3" style="color: #682773"></div>
-                <div class="row mt-2">
-                    <div class="col-md-12"><label class="labels">Kullanıcı Adı</label><input asp-for="Username" type="text" class="form-control" placeholder="Kullanıcı Adı" value="@Model.Username"></div>
-                </div>
-                <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">İsim</label><input asp-for="Name" type="text" class="form-control" placeholder="İsim" value="@Model.Name"></div>
-                    <div class="col-md-6"><label class="labels">Soyisim</label><input asp-for="Lastname" type="text" class="form-control" value="@Model.Lastname" placeholder="Soyisim"></div>
+                    <div class="row mt-2">
+                        <div class="col-md-12"><label class="labels">Kullanıcı Adı</label><input readonly asp-for="Username" type="text" class="form-control" placeholder="Kullanıcı Adı" value="@Model.Username"></div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6"><label class="labels">İsim</label><input readonly asp-for="Name" type="text" class="form-control" placeholder="İsim" value="@Model.Name"></div>
+                        <div class="col-md-6"><label class="labels">Soyisim</label><input readonly asp-for="Lastname" type="text" class="form-control" value="@Model.Lastname" placeholder="Soyisim"></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12"><label class="labels">E-Posta</label><input readonly asp-for="Email" type="text" class="form-control" placeholder="enter email id" value="@Model.Email"></div>
+                    </div>
+                <div class="row mt-3">
+                    <div class="col-md-12"><a class="btn btn-outline-info" asp-controller="Follow" asp-action="Followers" asp-route-id="@Model.UserId">Takipçiler</a></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">E-Posta</label><input asp-for="Email" type="text" class="form-control" placeholder="enter email id" value="@Model.Email"></div>
-                    
-                    <div class="row mt-2">
-                        <div class="col-md-10">
-                            <label class="labels">Şifre</label><input asp-for="Password" type="password" id="password" class="form-control" placeholder="********" value="@Model.Password">
-                        </div>
-                        <div class="col-md-1">
-                            <button class="btn btn-outline-warning mt-4" onclick="togglePasswordVisibility()" type="button"><i class="bi bi-eye"></i></button>
-                        </div>
-                    </div>
-
-
+                    <div class="col-md-12"><a class="btn btn-outline-info" asp-controller="Follow" asp-action="Followings" asp-route-id="@Model.UserId">Takip Edilenler</a></div>
                 </div>
-                 
-                   
-              
-                  
-          
-            </div>
-                @* <div class="row mt-3">
-                    <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value=""></div>
-                    <div class="col-md-6"><label class="labels">State/Region</label><input type="text" class="form-control" value="" placeholder="state"></div>
-                </div> *@
-                <div class="mt-5 text-center"><button class="btn btn-outline-primary button-save  mb-5" type="submit">Profili Kaydet</button></div>
-            </form>
-            </div>
+                </div>
+        </div>
     </div>
-
 </div>
-</div>
-</div>
-</div>
-
-
-<script>
-          function togglePasswordVisibility() {
-              var passwordInput = document.getElementById("password");
-              if (passwordInput.type === "password") {
-                  passwordInput.type = "text";
-              } else {
-                  passwordInput.type = "password";
-              }
-          }
-</script>
