@@ -2,22 +2,33 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using TrendyModa.Models;
+using Microsoft.EntityFrameworkCore;
+using TrendyModa.Repositories;
+using Microsoft.Extensions.Hosting;
+using NuGet.Protocol.Core.Types;
+
 
 namespace TrendyModa.Controllers
 {
     [Authorize]
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly TrendyModaDbContext context;
+        private readonly HomeRepository homeRepository;
+        
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController()
         {
-            _logger = logger;
+            context = new TrendyModaDbContext();
+            homeRepository = new HomeRepository(context);
         }
 
-        public IActionResult Index()
+        [HttpGet]
+        public async Task<IActionResult> Index()
         {
-            return View();
+            int userId = Convert.ToInt32(User.FindFirst(x => x.Type == "UserId").Value);
+            var posts = await homeRepository.GetFollowedUsersPostsAsync(userId);
+            return View(posts);
         }
 
         public IActionResult Privacy()
@@ -25,10 +36,6 @@ namespace TrendyModa.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+       
     }
 }

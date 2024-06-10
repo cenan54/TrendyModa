@@ -50,13 +50,15 @@ namespace TrendyModa.Controllers
         
             public IActionResult Followers(int id)
             {
-                var followers = followRepository.GetFollowers(id);
+                int loggedId = id;
+                var followers = followRepository.GetFollowers(loggedId);
                 return View(followers);
             }
 
             public IActionResult Followings(int id)
             {
-                var followings = followRepository.GetFollowings(id);
+                int loggedId = id;
+                var followings = followRepository.GetFollowings(loggedId);
                 return View(followings);
             }
         

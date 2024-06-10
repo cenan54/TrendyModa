@@ -1,8 +1,116 @@
-﻿@{
+﻿@model List<Photo>
+@using System.Security.Claims
+@{
     ViewData["Title"] = "Ana Sayfa";
+    int userPostCount = 0;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<main role="main">
+    <div class="album p-5 bg-light">
+        <div class="container">
+            <div class="row px-5">
+                <h4 class="mb-5 border-primary border-bottom border-3 pb-2">Gönderilerim</h4>
+
+                @* kullanıcının kaç tane post attğını döngü ile bulma işlemi*@
+                @foreach (var item in Model)
+                {
+                    if (User.FindFirst(x => x.Type == "UserId").Value == item.UserId.ToString())
+                    {
+                        userPostCount++;
+                    }
+                }
+
+                @* kullanıcı daha önce post atmış mı diye kontrol etme işlemi*@
+                @if (userPostCount == 0)
+                {
+                    <div>Henüz gönderi atmadınız. <a class="btn btn-success" asp-controller="Post" asp-action="PostAdd">Gönderi Ekle</a></div>
+                }
+                else
+                {
+
+                    @foreach (var item in Model)
+                    {
+                        @* burada login yapan kişinin id si ile database user id kontrol
+                ekiliyor ki başkasının postu gözükmesin*@
+                        if (User.FindFirst(x => x.Type == "UserId").Value == item.UserId.ToString())
+                        {
+
+                            string imageBase64 = Convert.ToBase64String(item.Image);
+                            string imageSrc = String.Format("data:image;base64,{0}", imageBase64);
+
+
+                            int likeCount = 0;
+                            foreach (var like in item.Likes)
+                            {
+                                if (like.PhotoId == item.PhotoId)
+                                {
+                                    likeCount++;
+                                }
+                            }
+
+                            int commentCount = 0;
+                            foreach (var comment in item.Comments)
+                            {
+                                if (comment.PhotoId == item.PhotoId)
+                                {
+                                    commentCount++;
+                                }
+                            }
+
+
+                            <div class="row">
+                                <div class="col-sm-0 col-lg-2 col-xxl-3"></div>
+                                <div class="col-sm-12 col-lg-8 col-xxl-6">
+
+                                    <div class="col-12">
+                                        <div class="card mb-4 box-shadow border border-3 rounded">
+                                            <div class="col-12 bg-dark bg-gradient rounded rounded-3">
+                                                <p style="font-weight: bold;" class="text-light card-text ms-3 mt-3 mb-3">@item.User.Username</p>
+                                            </div>
+
+                                            <img class="card-img-top rounded-3" src="@imageSrc" alt="Card image cap">
+                                            <div class="card-body">
+
+                                                <div class=" border-bottom border-2 mb-4">
+                                                    <p class="card-text mb-2">@item.Description</p>
+                                                </div>
+
+                                                <div class="btn-group me-2">
+                                                    <form asp-controller="Like" asp-action="LikeAdd" method="post">
+                                                        <input type="hidden" name="UserId" value="@item.UserId">
+                                                        <input type="hidden" name="PhotoId" value="@item.PhotoId">
+                                                        <button type="submit" class="btn btn-sm text-light rounded" style="background: rgb(186, 6, 90); box-shadow: none">
+                                                            <i class="bi bi-heart"></i>
+                                                        </button>
+                                                    </form>
+
+                                                    <a type="button" style="color:rgb(186, 6, 90); border: none" class="btn btn-sm" asp-controller="Like" asp-action="LikeList" asp-route-id="@item.PhotoId">@likeCount Beğeni</a>
+                                                </div>
+
+                                                <div class="btn-group me-5">
+                                                    <a type="button" class="btn btn-sm text-light rounded" style="background: rgb(3, 158, 153); box-shadow: none" asp-controller="Comment" asp-action="AddEditCommentIndex" asp-route-id="@item.PhotoId"><i class="bi bi-chat"></i></a>
+                                                    <a type="button" style="color:rgb(3, 158, 153); border: none" class="btn btn-sm" asp-controller="Comment" asp-action="ListComments" asp-route-id="@item.PhotoId">@commentCount Yorum</a>
+                                                </div>
+
+                                                <div class="btn-group">
+                                                    <a type="button" class="btn btn-outline-warning rounded" style="border: none" asp-controller="Post" asp-action="PostEdit" asp-route-id="@item.PhotoId"><i class="bi bi-pencil-square"></i></a>
+                                                    <a type="button" class="btn btn-outline-danger rounded" style="border: none" asp-controller="Post" asp-action="Delete" asp-route-id="@item.PhotoId"><i class="bi bi-trash"></i></a>
+                                                </div>
+                                                <br />
+                                                <div class="mt-2"> <small class="text-muted">Oluşturma Tarihi: @item.CreatedAt</small></div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-0 col-lg-2 col-xxl-3"></div>
+                            </div>
+
+                        }
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</main>

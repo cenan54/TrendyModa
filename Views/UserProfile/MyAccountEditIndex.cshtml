@@ -74,18 +74,18 @@
                 </div>
                     <div class="border-top border-3 mb-3" style="color: #682773"></div>
                 <div class="row mt-2">
-                    <div class="col-md-12"><label class="labels">Kullanıcı Adı</label><input asp-for="Username" type="text" class="form-control" placeholder="Kullanıcı Adı" value="@Model.Username"></div>
+                    <div class="col-md-12"><label class="labels">Kullanıcı Adı</label><input required asp-for="Username" type="text" class="form-control" placeholder="Kullanıcı Adı" value="@Model.Username"></div>
                 </div>
                 <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">İsim</label><input asp-for="Name" type="text" class="form-control" placeholder="İsim" value="@Model.Name"></div>
-                    <div class="col-md-6"><label class="labels">Soyisim</label><input asp-for="Lastname" type="text" class="form-control" value="@Model.Lastname" placeholder="Soyisim"></div>
+                        <div class="col-md-6"><label class="labels">İsim</label><input asp-for="Name" required type="text" class="form-control" placeholder="İsim" value="@Model.Name"></div>
+                        <div class="col-md-6"><label class="labels">Soyisim</label><input asp-for="Lastname" required type="text" class="form-control" value="@Model.Lastname" placeholder="Soyisim"></div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">E-Posta</label><input asp-for="Email" type="text" class="form-control" placeholder="enter email id" value="@Model.Email"></div>
+                        <div class="col-md-12"><label class="labels">E-Posta</label><input asp-for="Email" required type="text" class="form-control" placeholder="enter email id" value="@Model.Email"></div>
                     
                     <div class="row mt-2">
                         <div class="col-md-10">
-                            <label class="labels">Şifre</label><input asp-for="Password" type="password" id="password" class="form-control" placeholder="********" value="@Model.Password">
+                                <label class="labels">Şifre</label><input asp-for="Password" required type="password" id="password" class="form-control" placeholder="********" value="@Model.Password">
                         </div>
                         <div class="col-md-1">
                             <button class="btn btn-outline-warning mt-4" onclick="togglePasswordVisibility()" type="button"><i class="bi bi-eye"></i></button>
