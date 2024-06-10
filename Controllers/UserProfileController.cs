@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using TrendyModa.Models;
 
@@ -32,11 +33,14 @@ namespace TrendyModa.Controllers
 
 
         [HttpPost]
-        public IActionResult MyAccountEdit([FromForm] User data)
+        public IActionResult MyAccountEdit([FromForm] User user)
         {
             if (ModelState.IsValid)
             {
-                context.Users.Update(data);
+                var passwordHasher = new PasswordHasher<User>();
+                var hashedPassword = passwordHasher.HashPassword(user, user.Password);
+                user.Password = hashedPassword;
+                context.Users.Update(user);
                 context.SaveChanges();
                 return RedirectToAction("LogoutIndex","Account");
             }
