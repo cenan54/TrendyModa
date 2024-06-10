@@ -26,8 +26,13 @@ namespace TrendyModa.Controllers
         [HttpGet]
         public IActionResult AddEditCommentIndex(int id)
         {
-            var comment = context.Comments.FirstOrDefault(x => x.PhotoId==id);
-            if (comment == null)
+            string loggedUser = User.FindFirst(u => u.Type == "UserId").Value;
+            var comment = context.Comments.FirstOrDefault(x => x.PhotoId == id && x.UserId == Convert.ToInt32(loggedUser));
+            
+
+            
+
+            if (comment==null)
             {
                 return View("AddComment",id);
             }
