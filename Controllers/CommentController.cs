@@ -64,7 +64,9 @@ namespace TrendyModa.Controllers
         public IActionResult EditComment([FromForm] Comment comment)
         {
             if (comment!=null)
-            {
+            {   
+                //I left that on purpose on here
+
                 //context.Comments.Update(comment);
                 //context.SaveChanges();
                 //return RedirectToAction("GetImage", "Post");

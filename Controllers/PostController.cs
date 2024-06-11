@@ -36,7 +36,7 @@ namespace TrendyModa.Controllers
                     await imageFile.CopyToAsync(memoryStream);
                     byte[] imageBytes = memoryStream.ToArray();
 
-                    // Yeni bir photo nesnesi veritabanına kayıt
+                  
                     var photo = new Photo
                     {
                         UserId = Convert.ToInt32(User.FindFirst(x => x.Type == "UserId").Value),
@@ -50,7 +50,7 @@ namespace TrendyModa.Controllers
                 }
             }
 
-            return RedirectToAction("Index", "Error"); // başka bir view'a yönlendirme 
+            return RedirectToAction("Index", "Error"); 
         }
 
         [HttpGet]
@@ -104,19 +104,18 @@ namespace TrendyModa.Controllers
             int postId = model.PhotoId;
             string description = model.Description;
 
-            // Veritabanında güncelleme işlemini gerçekleştirin
-            // Örneğin, Entity Framework ile:
+           
             var existingRecord = context.Photos.FirstOrDefault(r => r.PhotoId == postId);
             if (existingRecord != null)
             {
                 existingRecord.Description = description;
                 context.SaveChanges();
-              //  return RedirectToAction("Details", new { id = existingRecord.PhotoId });
+         
                 return RedirectToAction("GetImage","Post");
             }
             else
             {
-                // Hata durumunda kullanıcıyı hata sayfasına yönlendirin
+               
                 return RedirectToAction("Error");
             }
         }
