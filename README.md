@@ -3,3 +3,6 @@
  
  before setting up the database look for files in TrendyModa/README-DATABASE folder
  it uses Microsoft SQL Server. Database create folder in README-DATABASE folder
+ 
+ 21660110045
+ Mustafa Cenan
